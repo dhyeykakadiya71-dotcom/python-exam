@@ -1,0 +1,35 @@
+while True:
+    print(" ********************************* ")
+    print("|                                 |")
+    print("|Welcome to the bill splitter APP!|")
+    print("|                                 |")
+    print(" ********************************* ")
+
+    peopel = int(input("\nEnter Number of peopel:"))
+    bill_amount = float(input("Enter The Bill Amount:"))
+    if bill_amount <= 0:
+        print("invalid amount")
+        bill_amount = int(input("re-Enter amount:"))
+    tip = int(input("Enter Tip Percentage(Thlli tip will be count from your total bill)(5/10/15/20/):"))
+    tip_amount = bill_amount * tip / 100
+    total_bill = bill_amount + tip_amount
+
+    print(f"\nTip amount:{tip_amount}")
+    print(f"Total Bill(with Tip):{total_bill}")
+    print(f"Each person should pay:{total_bill / peopel}")
+
+    ans = str(input("\nwould you like to calculate another bill(y/n)(y=yes,n=no):"))
+    
+    if ans == "y":
+        continue
+    elif ans == "n":
+        print("have a good day!")
+        break
+    else:
+        print("your answer is wronge re Enter the answer.")
+        ans = str(input("would you like to calculate another bill(y/n)(y=yes,n=no):"))
+        
+        if ans == "y":
+            continue
+        else:
+            break
